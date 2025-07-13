@@ -43,7 +43,8 @@ jobs:
         run: aws sts get-caller-identity
 
       - name: Terraform-Plan
-        working-directory: ${{ inputs.directory_path }}
+        working-directory: ${{ github.event.inputs.environment }}
+        # working-directory: ${{ inputs.directory_path }}
         # working-directory: "resource/iam"
         run: |
           terraform init
@@ -76,7 +77,7 @@ jobs:
         run: aws sts get-caller-identity
 
       - name: Terraform-Apply
-        working-directory: ${{ inputs.directory_path }}
+        working-directory: ${{ github.event.inputs.environment }}
         # working-directory: "resource/iam"
         run: |
           terraform init
