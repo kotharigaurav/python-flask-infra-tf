@@ -1,3 +1,4 @@
+/*
 locals {
   vpc_name            = "TerraformVPC"
   cidr_block          = "10.0.0.0/16"
@@ -24,3 +25,4 @@ locals {
   lb_listner_protocol = "HTTP"
   lb_listner_default_action = "forward"
 }
+*/
