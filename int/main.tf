@@ -48,3 +48,21 @@ module "lb_target_group" {
   vpc_id = module.vpc.vpc_id
   ec2_instance_id = module.ec2.instance_id
 }
+
+###################################
+# AWS Application Load Balancer
+###################################
+
+module "alb" {
+  source = "../modules/alb"
+  alb_name = local.alb_name
+  load_balancer_type = local.load_balancer_type
+  security_group_ids = [module.security_group.security_group_ids]
+  subnets = [module.vpc.public_subnet_ids]
+  target_group_arn = module.lb_target_group.target_group_arn
+  target_id = module.ec2.instance_id
+  port = local.port
+  lb_listner_protocol = local.lb_listner_protocol
+  lb_listner_default_action = local.lb_listner_default_action
+  lb_target_group_arn = module.lb_target_group.target_group_arn
+}

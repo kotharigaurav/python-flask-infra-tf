@@ -18,4 +18,9 @@ locals {
 
   tg_name = "TerraofrmLBTargetGroup"
   port    = 5000
+
+  alb_name = "TerraformALB"
+  load_balancer_type = "application"
+  lb_listner_protocol = "HTTP"
+  lb_listner_default_action = "forward"
 }
