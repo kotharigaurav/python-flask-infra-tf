@@ -46,4 +46,5 @@ module "lb_target_group" {
   tg_name = local.tg_name
   port    = local.port
   vpc_id = module.vpc.vpc_id
+  ec2_instance_id = module.ec2.instance_id
 }

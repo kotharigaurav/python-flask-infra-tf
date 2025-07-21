@@ -16,6 +16,6 @@ resource "aws_lb_target_group" "test" {
 
 resource "aws_lb_target_group_attachment" "test" {
   target_group_arn = aws_lb_target_group.test.arn
-  target_id        = module.ec2.instance_id
+  target_id        = var.ec2_instance_id
   port             = var.port
 }
