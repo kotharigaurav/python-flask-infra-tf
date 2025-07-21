@@ -34,5 +34,5 @@ module "ec2" {
   subnet_id = local.subnet_id
   key_name = local.key_name
   user_data = local.user_data
-  public_key = var.public_key
+  public_key = local.public_key
 }

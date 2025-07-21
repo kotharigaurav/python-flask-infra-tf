@@ -40,7 +40,7 @@ variable "user_data" {
     default     = ""
 }
 
-variable public_key = {
+variable public_key {
     description = "Public key for the AWS key pair"
     type        = string
     default     = ""
