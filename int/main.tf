@@ -58,7 +58,7 @@ module "alb" {
   alb_name = local.alb_name
   load_balancer_type = local.load_balancer_type
   security_group_ids = [module.security_group.security_group_ids]
-  subnets = [module.vpc.public_subnet_ids]
+  subnets = tolist(module.vpc.public_subnet_ids)
   target_group_arn = module.lb_target_group.target_group_arn
   target_id = module.ec2.instance_id
   port = local.port
