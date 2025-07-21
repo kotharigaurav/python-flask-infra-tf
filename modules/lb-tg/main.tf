@@ -2,7 +2,7 @@ resource "aws_lb_target_group" "test" {
   name     = var.tg_name
   port     = var.port
   protocol = "HTTP"
-  vpc_id   = module.vpc.vpc_id
+  vpc_id   = var.vpc_id
   health_check {
     path = "/health"
     port = 5000
