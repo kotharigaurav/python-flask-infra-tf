@@ -15,4 +15,7 @@ locals {
   key_name = "aws-key"
   user_data = templatefile("./template/ec2_install_apache.sh", {})
   public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpypvOKIoPl9dqED2Zpfp0CDFihrykdRtSBV+bguW24 gaura@Kothari"
+
+  tg_name = "TerraofrmLBTargetGroup"
+  port    = 5000
 }

@@ -36,3 +36,13 @@ module "ec2" {
   user_data = local.user_data
   public_key = local.public_key
 }
+
+###################################
+# AWS Load Balancer Target Group
+###################################
+
+module "lb_target_group" {
+  source = "../modules/lb-tg"
+  tg_name = local.tg_name
+  port    = local.port
+}
