@@ -20,3 +20,19 @@ module "security_group" {
   ec2_sg_name = local.ec2_sg_name
   vpc_id      = module.vpc.vpc_id
 }
+
+###################################
+# AWS EC2 Instance
+###################################
+
+module "ec2" {
+  source      = "../modules/ec2"
+  instance_name = local.instance_name
+  ami_id      = local.ami_id
+  instance_type = local.instance_type
+  security_groups = local.security_group_ids
+  subnet_id = local.subnet_id
+  key_name = local.key_name
+  user_data = local.user_data
+  public_key = var.public_key
+}
